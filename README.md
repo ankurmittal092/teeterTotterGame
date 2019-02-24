@@ -1,4 +1,4 @@
-# my-project
+# Teeter Totter Game in VueJs
 
 ## Project setup
 ```
