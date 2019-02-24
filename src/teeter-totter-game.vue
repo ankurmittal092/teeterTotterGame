@@ -4,10 +4,19 @@
     <div v-on:click="greet">{{ test }}</div>
     <input v-model="messageData" />
     <div>Yooo - {{ testTodo }}</div>
+    <div class="d-fr cntr">
+      <Square size="100" weight="10" />
+      <MyCircle size="100" weight="20" />
+      <Triangle size="100" weight="30" />
+    </div>
   </div>
 </template>
 
 <script>
+import Square from './components/square';
+import MyCircle from './components/circle';
+import Triangle from './components/triangle';
+
 export default {
   name: 'TeeterTotterGame',
   props: {
@@ -29,6 +38,11 @@ export default {
     testTodo: function () {
       return this.$store.getters.testTodo;
     }
+  },
+  components: {
+    Square,
+    MyCircle,
+    Triangle
   }
 }
 </script>
