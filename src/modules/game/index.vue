@@ -31,6 +31,15 @@
         v-if="shapeNumber === 3"
       />
     </div>
+    <div class="d-fr cntr balance">
+      <div class="beam"></div>
+      <div class='balance-pivot'>
+        <Triangle
+          v-bind:size="50"
+        />
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -131,5 +140,20 @@ export default {
     box-shadow: 1px 2px 20px 5px #c3bdbd;
     border-radius: 3px;
      background-size: cover;
+  }
+
+  .balance {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .beam {
+    border: 3px solid;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    border-radius: 3px;
   }
 </style>
