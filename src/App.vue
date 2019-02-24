@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <TeeterTotterGame msg="Welcome to Your Vue.js App"/>
+    <TeeterTotterGame
+      msg="Welcome to Teeter Tottler Game"
+    />
   </div>
 </template>
 
@@ -17,13 +18,15 @@ export default {
 </script>
 
 <style>
+  body {
+    background: #f2f2f2;
+  }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
 
   .d-fr {

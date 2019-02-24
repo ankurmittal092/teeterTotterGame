@@ -8,8 +8,8 @@
 export default {
   name: 'MyCircle',
   props: {
-    size: String,
-    weight: String
+    size: Number,
+    weight: Number
   }
 }
 </script>
@@ -18,8 +18,8 @@ export default {
 <style scoped>
   .circle {
     border-radius: 100%;
-    background-color: red;
-    color: #fff;
+    background-color: #fafafa;
+    /* color: #fff; */
     font-weight: 500;
   }
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <div class="d-fr cntr square" v-bind:style="{ height: `${size}px`, width: `${size}px` }">
+  <div
+    class="d-fr cntr square"
+    v-bind:style="{ height: `${size}px`, width: `${size}px` }"
+  >
     {{ weight }}
   </div>
 </template>
@@ -8,8 +11,8 @@
 export default {
   name: 'Square',
   props: {
-    size: String,
-    weight: String
+    size: Number,
+    weight: Number
   }
 }
 </script>
@@ -17,8 +20,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .square {
-    background-color: green;
-    color: #fff;
+    background-color: #fafafa;
+    /* color: #fff; */
     font-weight: 500;
   }
 </style>

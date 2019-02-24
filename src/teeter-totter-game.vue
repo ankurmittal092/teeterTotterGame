@@ -1,21 +1,26 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div v-on:click="greet">{{ test }}</div>
-    <input v-model="messageData" />
-    <div>Yooo - {{ testTodo }}</div>
-    <div class="d-fr cntr">
-      <Square size="100" weight="10" />
-      <MyCircle size="100" weight="20" />
-      <Triangle size="100" weight="30" />
+    <div v-if="!gameStarted">
+      <h1 >{{ msg }}</h1>
+      <button
+        @click="$store.dispatch('startGame')"
+      >
+        Start Game
+      </button>
+    </div>
+
+    <!-- <div v-on:click="greet">{{ test }}</div> -->
+    <!-- <input v-model="messageData" /> -->
+    <!-- <div>Yooo - {{ testTodo }}</div> -->
+    <!-- <button @click="$store.dispatch('endGame')">End Game</button> -->
+    <div v-if="gameStarted">
+      <Game />
     </div>
   </div>
 </template>
 
 <script>
-import Square from './components/square';
-import MyCircle from './components/circle';
-import Triangle from './components/triangle';
+import Game from './modules/game';
 
 export default {
   name: 'TeeterTotterGame',
@@ -24,25 +29,21 @@ export default {
   },
   data: function () {
     return {
-      test: 'hello hello',
+      test: '',
       messageData: this.msg
     };
   },
-  methods: {
-    greet: function (params) {
-      console.log(this, this.$store);
-    },
-    inputChange: console.log
-  },
+  methods: {},
   computed: {
-    testTodo: function () {
-      return this.$store.getters.testTodo;
+    gameStarted: function () {
+      return this.$store.getters.gameStarted;
+    },
+    gamePaused: function () {
+      return this.$store.getters.gamePaused;
     }
   },
   components: {
-    Square,
-    MyCircle,
-    Triangle
+    Game
   }
 }
 </script>
